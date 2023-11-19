@@ -16,7 +16,7 @@ def Select_Mode():
     elif Mode == "4":
         create_phone_items()
     else:
-        print("既定のデータを入力してください")
+        print("1~4で入力してください")
 #2_モードに従ってコードを発行
 def create_pc_details():
     judge = "Y"
