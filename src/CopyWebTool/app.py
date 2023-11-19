@@ -22,7 +22,6 @@ def create_pc_details():
     judge = "Y"
     #ファイルの入力
     htmlfile = ""
-
     itemtitle = input("内容を入力してください:")
     description_save = input("保存方法を入力してください:")
     htmlfile += """
@@ -36,21 +35,46 @@ def create_pc_details():
         </table>
         """.format(itemtitle=itemtitle,description_save=description_save)
     while judge == "Y":
-        thtitle = input("タイトルを入力してください:")
-        description = input("説明文を入力してください(改行は@@と入力してください):").replace('@@','<br>')
+        th_item_name = input("商品名称を入力してください: ")
+        td_item_material = input("原材料を入力してください: ")
+        td_item_size = input("商品の内容量を入力してください: ")
         htmlfile += """
         <br>
         <table class="design01">   
             <!-- 行1 -->
             <tr>
-                <th>{thtitle}</th>
+                <th>名称</th>
             </tr>
             <!-- 行2 -->
             <tr>
-                <td>{description}</td>
+                <td>{th_item_name}</td>
+            </tr>
+            <tr>
+                <th>原材料</th>
+            </tr>
+            <tr>
+                <td>{td_item_material}</td>
+            </tr>
+            <tr>
+                <th>内容量</th>
+            </tr>
+            <tr>
+                <td>{td_item_size}</td>
+            </tr>
+            <tr>
+                <th>賞味期限</th>
+            </tr>
+            <tr>
+                <td>パッケージに記載</td>
+            </tr>
+            <tr>
+                <th>製造者</th>
+            </tr>
+            <tr>
+                <td>有限会社ミートの元気商事 ( 山形県山形市下条町５丁目６－１２ )</td>
             </tr>
         </table>
-        """.format(thtitle=thtitle,description=description)
+        """.format(th_item_name=th_item_name,td_item_material=td_item_material,td_item_size=td_item_size)
         judge = input("続けますか？（Y/N）:")
 
     html_code_head = '''
@@ -128,11 +152,9 @@ def create_pc_overray():
     #ファイル名の入力と保存に遷移
     filesave(html_code_head)
 def create_phone_details():
-
     judge = "Y"
     #ファイルの入力
     htmlfile = ""
-
     itemtitle = input("内容を入力してください:")
     description_save = input("保存方法を入力してください:")
     htmlfile += """
@@ -145,18 +167,43 @@ def create_phone_details():
         <br><br>
         """.format(itemtitle=itemtitle,description_save=description_save)
     while judge == "Y":
-        thtitle = input("タイトルを入力してください:")
-        description = input("説明文を入力してください(改行は@@と入力してください):").replace('@@','<br>')
+        th_item_name = input("商品名称を入力してください: ")
+        td_item_material = input("原材料を入力してください: ")
+        td_item_size = input("商品の内容量を入力してください: ")
         htmlfile += """
         <table align="left" frame="void" border="2"> 
             <tr>
-                <th bgcolor="#DDD"><font>{thtitle}</font></th>
+                <th bgcolor="#DDD"><font>名称</font></th>
+            </tr>   
+            <tr>
+                <td bgcolor="#fff"><font>{th_item_name}</font></td>
             </tr>
             <tr>
-                <td bgcolor="#fff"><font>{description}</font></td>
+                <th bgcolor="#DDD"><font>原材料</font></th>
+            </tr>   
+            <tr>
+                <td bgcolor="#fff"><font>{td_item_material}</font></td>
+            </tr>
+            <tr>
+                <th bgcolor="#DDD"><font>内容量</font></th>
+            </tr>   
+            <tr>
+                <td bgcolor="#fff"><font>{td_item_size}</font></td>
+            </tr>
+            <tr>
+                <th bgcolor="#DDD"><font>賞味期限</font></th>
+            </tr>
+            <tr>
+                <td bgcolor="#fff"><font>パッケージに記載</font></td>
+            </tr>
+            <tr>
+                <th bgcolor="#DDD"><font>製造者</font></th>
+            </tr>
+            <tr>
+                <td bgcolor="#fff"><font>有限会社ミートの元気商事 ( 山形県山形市下条町５丁目６－１２ )</font></td>
             </tr>
         </table>
-        """.format(thtitle=thtitle,description=description)
+        """.format(th_item_name=th_item_name,td_item_material=td_item_material,td_item_size=td_item_size)
         judge = input("続けますか？（Y/N）:")
 
 
